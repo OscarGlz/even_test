@@ -3,17 +3,21 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Process](#process)
 
 ## General info
 Code challenge consisting in process parquet files into a database and making the information available via API.
 	
 ## Technologies
 Project is created with:
-* Lorem version: 12.3
-* Ipsum version: 2.33
-* Ament library version: 999
+* Talend: 7.3.1
+* Python: 3.8.6
+* SQL Server: 15.02
+
 	
 ## Setup
 To run this project, install it locally using npm:
 
-![Database Diagram](DBDiagram.jpg)
+## Process
+
+![Database Diagram](https://github.com/OscarGlz/even_test/blob/main/DB Diagram.PNG)
