@@ -2,7 +2,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Challenge](#challenge)
+* [Challenges](#challenges)
 
 ## General info
 Code challenge consisting in processing parquet files, load them a database and make the data available via API.
