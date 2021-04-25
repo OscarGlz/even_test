@@ -20,7 +20,8 @@ API Testing:
 
 	
 ## Setup
-To run this project, install it locally using npm:
+Python packages can be imported using below requirements.txt file
+
 
 ## Challenges
 
