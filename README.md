@@ -20,4 +20,4 @@ To run this project, install it locally using npm:
 
 ## Process
 
-![Database Diagram](https://github.com/OscarGlz/even_test/blob/main/DB Diagram.PNG)
+![Database Diagram](https://github.com/OscarGlz/even_test/blob/main/DBDiagram.PNG)
