@@ -16,4 +16,4 @@ Project is created with:
 ## Setup
 To run this project, install it locally using npm:
 
-![Database Diagram](./DB Diagram.PNG)
+![Database Diagram](./DB Diagram.jpg)
