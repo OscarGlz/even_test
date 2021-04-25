@@ -33,6 +33,9 @@ From the <b>rate_tables</b> table we found that not all the <b>rate_table_offer_
 
 #### Challenge 2
 The file parse and bulk load into the DB (SQL server) was done using Talend Open Studio. A pipe line was created for this purpose which took less than 7 sec to load the information.
+
+[Database script](https://github.com/OscarGlz/even_test/blob/main/even_db.sql)
+
 ![Talend pipeline](https://github.com/OscarGlz/even_test/blob/main/Talend.PNG)
 
 #### Challenge 3
