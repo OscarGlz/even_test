@@ -3,6 +3,7 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Challenges](#challenges)
+* [Support](#support)
 
 ## General info
 Code challenge consisting in processing parquet files, load them a database and make the data available via API.
@@ -34,7 +35,7 @@ From the <b>rate_tables</b> table we found that not all the <b>rate_table_offer_
 The file parse and bulk load into the DB (SQL server) was done using Talend Open Studio. A pipe line was created for this purpose which took less than 7 sec to load the information.
 ![Talend pipeline](https://github.com/OscarGlz/even_test/blob/main/Talend.PNG)
 
-#### Challenge 2
+#### Challenge 3
 The REST API end point to retrieve the full dataset associated with a single lead_uuid in JSON format, was created using Python in PyCharm. In order to keep the code compact, a stored procedure was created in the DB that is called with the get.
 
 The End point example is:
@@ -50,11 +51,13 @@ And lead_uuid exists in the DB.
 ![postman13](https://github.com/OscarGlz/even_test/blob/main/postman13.PNG)
 
 
-#### Challenge 2
+#### Challenge 4
 The second REST API endpoint that provides certain statistics for a given lead_uuid is calling a stored procedure and has the same validations as the previous one.
 
+![postman21](https://github.com/OscarGlz/even_test/blob/main/postman21.PNG)
 
 
-
+## Support
+Got questions? send an email to ogoz00@hotmail.com
 
 
