@@ -29,17 +29,21 @@ The first step was to create a database diagram in order to accomodate the infor
 
 From the <b>rate_tables</b> table we found that not all the <b>rate_table_offer_id</b> rows were in the <b>click</b> table. That is the reason why we did not create a FK from <b>clicks</b> table, the alternative was to error out those records with no match in <b>click</b> table. Finally, the relationship is 1 to 1, meaning that <b>click</b> table can be merged with <b>rate_tables</b> table.
 
+[Database script](https://github.com/OscarGlz/even_test/blob/main/even_db.sql)
+
 ![Database Diagram](https://github.com/OscarGlz/even_test/blob/main/DBDiagram.PNG)
 
 #### Challenge 2
 The file parse and bulk load into the DB (SQL server) was done using Talend Open Studio. A pipe line was created for this purpose which took less than 7 sec to load the information.
 
-[Database script](https://github.com/OscarGlz/even_test/blob/main/even_db.sql)
+[Talend job](https://github.com/OscarGlz/even_test/blob/main/talend_job.zip)
 
 ![Talend pipeline](https://github.com/OscarGlz/even_test/blob/main/Talend.PNG)
 
 #### Challenge 3
 The REST API end point to retrieve the full dataset associated with a single lead_uuid in JSON format, was created using Python in PyCharm. In order to keep the code compact, a stored procedure was created in the DB that is called with the get.
+
+[Python script](https://github.com/OscarGlz/even_test/blob/main/main.py)
 
 The End point example is:
 http://127.0.0.1:5000/detail/<lead_uuid>
