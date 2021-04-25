@@ -2,7 +2,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Process](#process)
+* [Challenge](#challenge)
 
 ## General info
 Code challenge consisting in processing parquet files, load them a database and make the data available via API.
@@ -21,7 +21,7 @@ API Testing:
 ## Setup
 To run this project, install it locally using npm:
 
-## Process
+## Challenges
 
 #### Challenge 1
 The first step was to create a database diagram in order to accomodate the information from the parquet files.
@@ -38,11 +38,16 @@ The file parse and bulk load into the DB (SQL server) was done using Talend Open
 The REST API end point to retrieve the full dataset associated with a single lead_uuid in JSON format, was created using Python in PyCharm. In order to keep the code compact, a stored procedure was created in the DB that is called with the get.
 
 The End point example is:
-http://127.0.0.1:5000/detail/lead_uuid
+http://127.0.0.1:5000/detail/<lead_uuid>
 
+![postman11](https://github.com/OscarGlz/even_test/blob/main/postman11.PNG)
 
-Additionally, the End point validates that the lead_uuid is valid or exists in the DB.
+Additionally, the End point validates that the lead_uuid format is valid. 
 
+![postman12](https://github.com/OscarGlz/even_test/blob/main/postman12.PNG)
+
+And lead_uuid exists in the DB.
+![postman13](https://github.com/OscarGlz/even_test/blob/main/postman13.PNG)
 
 
 #### Challenge 2
