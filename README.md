@@ -28,6 +28,9 @@ From command line execute
 ```shell
   pip install -r requirements.txt
 ```
+And this is the main script in Python.
+[Python script](https://github.com/OscarGlz/even_test/blob/main/main.py)
+
 * Talend job needs to be imported into Talend as show below in the menu and then, select attached file.
 
 [Talend job file](https://github.com/OscarGlz/even_test/blob/main/talend_job.zip)
@@ -76,8 +79,6 @@ SELECT  A.[lead_uuid]
   WHERE  A.[lead_uuid] = @lu
   order by [offer_monthly_payment] asc
 ```
-
-[Python script](https://github.com/OscarGlz/even_test/blob/main/main.py)
 
 The End point example is:
 http://127.0.0.1:5000/detail/<lead_uuid>
