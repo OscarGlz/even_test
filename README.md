@@ -19,41 +19,43 @@ API Testing:
 * Postman: 8.2.3
 	
 ## Setup
-Python packages can be imported using below requirements.txt file
+* Python packages can be imported using below requirements.txt file
 
-[requirements](https://github.com/OscarGlz/even_test/blob/main/requirements.txt)
+[requirements file](https://github.com/OscarGlz/even_test/blob/main/requirements.txt)
 
 From command line execute
 
 ```shell
   pip install -r requirements.txt
 ```
-Talend job needs to be imported into Talend
+* Talend job needs to be imported into Talend as show below in the menu and then, select attached file.
 
-Rest of the tools used are free/open source.
+[Talend job file](https://github.com/OscarGlz/even_test/blob/main/talend_job.zip)
+
+![Talend Import](https://github.com/OscarGlz/even_test/blob/main/ImportTalend.PNG)
+
+* The Database can be created by executing the DB script in SQL Server. It contains tables, stored procedures and user.
+
+[Database script file](https://github.com/OscarGlz/even_test/blob/main/even_db.sql)
 
 ## Challenges
 
 #### Challenge 1
 The first step was to create a database diagram in order to accomodate the information from the parquet files.
 
-From the <b>rate_tables</b> table, we found that not all the <b>rate_table_offer_id</b> rows were in the <b>click</b> table. That is the reason why we did not create a FK from <b>clicks</b> table, the alternative was to error out those records with no match in <b>click</b> table. Finally, the relationship is 1 to 1, meaning that <b>click</b> table can be merged with <b>rate_tables</b> table. For the sake of the exercise we decided to leave them apart so there is no need to stich the data together.
-
-[Database script](https://github.com/OscarGlz/even_test/blob/main/even_db.sql)
+From the <b>rate_tables</b> table, we found that not all the <b>rate_table_offer_id</b> rows were in the <b>click</b> table. That is the reason why we did not create a FK from <b>clicks</b> table, the alternative was to error out those records with no match in <b>click</b> table. Finally, the relationship is 1 to 1, meaning that <b>click</b> table can be merged with <b>rate_tables</b> table. For the sake of simplicity in the exercise, we decided to leave them apart so there is no need to stich the data together.
 
 ![Database Diagram](https://github.com/OscarGlz/even_test/blob/main/DBDiagram.PNG)
 
 #### Challenge 2
 The file parse and bulk load into the DB (SQL server) was done using Talend Open Studio. A pipeline was created for this purpose which took less than 7 sec to load the information. Talend will run in any OS as long as the parameter in the path is adjusted.
 
-[Talend job](https://github.com/OscarGlz/even_test/blob/main/talend_job.zip)
-
 ![Talend pipeline](https://github.com/OscarGlz/even_test/blob/main/Talend.PNG)
 
 #### Challenge 3
-The REST API end point to retrieve the full dataset associated with a single lead_uuid in JSON format, was created using Python in PyCharm (it can run in any OS). In order to keep the code compact, a stored procedure was created in the DB that is called with the  <b>get<b>/.
+The REST API end point to retrieve the full dataset associated with a single lead_uuid in JSON format, was created using Python in PyCharm (it can run in any OS). In order to keep the code compact, a stored procedure was created in the DB that is called with the  <b>get</b>.
 
-In this script from the Select in the stored procedure. You can notice the left join to the <b>click</b> table and since not all the records has a corresponding value in that table. Also, even thought the stored procedure is prepare to get all the fields, the script only return a handful of fields as for proof of concept.
+In this script from the Select in the stored procedure. You can notice the left join to the <b>click</b> table and since not all the records has a corresponding value in that table. Also, even thought the stored procedure is prepare to get all the fields, the json only have a few fields in order to keep the code compact.
 
 ```sql
 SELECT  A.[lead_uuid]     
@@ -103,6 +105,8 @@ The stored procedure is prepared to get ALL the lead_uuid but it will return at 
   FROM [even].[dbo].[rate_tables]
   )
 ```
+The End point example is:
+http://127.0.0.1:5000/stats/<lead_uuid>
 
 ![postman21](https://github.com/OscarGlz/even_test/blob/main/postman21.PNG)
 
